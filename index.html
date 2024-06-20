@@ -2,11 +2,414 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Class Dev Project</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /!-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" />
+  <script type="module" crossorigin src="/assets/index-I5OEOYoG.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-StxDthpK.css">
 </head>
 <body>
-    <button type="button" class="colorBtn">Press Here to Change Color</button>
-    <script src="script.js"></script>
+    <aside id="sidebar">
+        <img id="company-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8IS0tIENyZWF0ZWQgd2l0aCBJbmtzY2FwZSAoaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvKSAtLT4NCg0KPHN2Zw0KICAgd2lkdGg9IjEwNm1tIg0KICAgaGVpZ2h0PSIzNW1tIg0KICAgdmlld0JveD0iMCAwIDEwNiAzNSINCiAgIHZlcnNpb249IjEuMSINCiAgIGlkPSJzdmc1Ig0KICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4xIChjNjhlMjJjMzg3LCAyMDIxLTA1LTIzKSINCiAgIHNvZGlwb2RpOmRvY25hbWU9ImxvZ28uc3ZnIg0KICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiDQogICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiDQogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHNvZGlwb2RpOm5hbWVkdmlldw0KICAgICBpZD0ibmFtZWR2aWV3NyINCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIg0KICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiINCiAgICAgYm9yZGVyb3BhY2l0eT0iMS4wIg0KICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIg0KICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIg0KICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSIwIg0KICAgICBpbmtzY2FwZTpkb2N1bWVudC11bml0cz0ibW0iDQogICAgIHNob3dncmlkPSJmYWxzZSINCiAgICAgaW5rc2NhcGU6em9vbT0iMi4xMjE1OTgxIg0KICAgICBpbmtzY2FwZTpjeD0iMTg2Ljg4NzQyIg0KICAgICBpbmtzY2FwZTpjeT0iNjkuMDUxNzIxIg0KICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjI1NjAiDQogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjEwMjciDQogICAgIGlua3NjYXBlOndpbmRvdy14PSItOCINCiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii04Ig0KICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIg0KICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJsYXllcjEiDQogICAgIHNob3dib3JkZXI9InRydWUiDQogICAgIGlua3NjYXBlOnNob3dwYWdlc2hhZG93PSJmYWxzZSINCiAgICAgdW5pdHM9Im1tIiAvPg0KICA8ZGVmcw0KICAgICBpZD0iZGVmczIiIC8+DQogIDxnDQogICAgIGlua3NjYXBlOmxhYmVsPSJMYXllciAxIg0KICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIg0KICAgICBpZD0ibGF5ZXIxIj4NCiAgICA8dGV4dA0KICAgICAgIHhtbDpzcGFjZT0icHJlc2VydmUiDQogICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7Zm9udC1zaXplOjEzLjI2NDJweDtsaW5lLWhlaWdodDoxLjI1O2ZvbnQtZmFtaWx5OidDZW50dXJ5IEdvdGhpYyc7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonQ2VudHVyeSBHb3RoaWMsIE5vcm1hbCc7Zm9udC12YXJpYW50LWxpZ2F0dXJlczpub3JtYWw7Zm9udC12YXJpYW50LWNhcHM6bm9ybWFsO2ZvbnQtdmFyaWFudC1udW1lcmljOm5vcm1hbDtmb250LXZhcmlhbnQtZWFzdC1hc2lhbjpub3JtYWw7ZmlsbDojZWNlY2VjO3N0cm9rZS13aWR0aDowLjI1NzUxOSINCiAgICAgICB4PSIyLjI4MTM3NTYiDQogICAgICAgeT0iMTIuMjM3NjM4Ig0KICAgICAgIGlkPSJ0ZXh0MTc3MiI+PHRzcGFuDQogICAgICAgICBzb2RpcG9kaTpyb2xlPSJsaW5lIg0KICAgICAgICAgaWQ9InRzcGFuMTc3MCINCiAgICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZToxMy4yNjQycHg7Zm9udC1mYW1pbHk6J0NlbnR1cnkgR290aGljJzstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidDZW50dXJ5IEdvdGhpYywgTm9ybWFsJztmb250LXZhcmlhbnQtbGlnYXR1cmVzOm5vcm1hbDtmb250LXZhcmlhbnQtY2Fwczpub3JtYWw7Zm9udC12YXJpYW50LW51bWVyaWM6bm9ybWFsO2ZvbnQtdmFyaWFudC1lYXN0LWFzaWFuOm5vcm1hbDtmaWxsOiNlY2VjZWM7c3Ryb2tlLXdpZHRoOjAuMjU3NTE5Ig0KICAgICAgICAgeD0iMi4yODEzNzU2Ig0KICAgICAgICAgeT0iMTIuMjM3NjM4Ij5DT05TVFJVQ1RJT048L3RzcGFuPjwvdGV4dD4NCiAgICA8dGV4dA0KICAgICAgIHhtbDpzcGFjZT0icHJlc2VydmUiDQogICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZToxOS42cHg7bGluZS1oZWlnaHQ6MS4yNTtmb250LWZhbWlseTonQ2VudHVyeSBHb3RoaWMnOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246J0NlbnR1cnkgR290aGljLCBCb2xkJztmb250LXZhcmlhbnQtbGlnYXR1cmVzOm5vcm1hbDtmb250LXZhcmlhbnQtY2Fwczpub3JtYWw7Zm9udC12YXJpYW50LW51bWVyaWM6bm9ybWFsO2ZvbnQtdmFyaWFudC1lYXN0LWFzaWFuOm5vcm1hbDtmaWxsOiMwMjlhZTA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlLXdpZHRoOjAuMzgwNTI1Ig0KICAgICAgIHg9IjIuMDkwODI0MSINCiAgICAgICB5PSIzMi4yMjk3MzYiDQogICAgICAgaWQ9InRleHQxNzc2Ij48dHNwYW4NCiAgICAgICAgIHNvZGlwb2RpOnJvbGU9ImxpbmUiDQogICAgICAgICBpZD0idHNwYW4xNzc0Ig0KICAgICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZToxOS42cHg7Zm9udC1mYW1pbHk6J0NlbnR1cnkgR290aGljJzstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidDZW50dXJ5IEdvdGhpYywgQm9sZCc7Zm9udC12YXJpYW50LWxpZ2F0dXJlczpub3JtYWw7Zm9udC12YXJpYW50LWNhcHM6bm9ybWFsO2ZvbnQtdmFyaWFudC1udW1lcmljOm5vcm1hbDtmb250LXZhcmlhbnQtZWFzdC1hc2lhbjpub3JtYWw7ZmlsbDojMDI5YWUwO2ZpbGwtb3BhY2l0eToxO3N0cm9rZS13aWR0aDowLjM4MDUyNSINCiAgICAgICAgIHg9IjIuMDkwODI0MSINCiAgICAgICAgIHk9IjMyLjIyOTczNiI+Q09NUEFOWTwvdHNwYW4+PC90ZXh0Pg0KICA8L2c+DQo8L3N2Zz4NCg==" alt="Construction Company">
+        <ul id="nav-buttons">
+            <li id="projects-list-page-button"><span class="material-icons-round">apartment </span>  Projects</li>
+            <li id="users-list-page-button"><span class="material-icons-round">people </span>  Users</li>
+            <li><span class="material-icons-round">house </span>  Projects2</li>
+            <li><span class="material-icons-round">real_estate_agent </span>  Projects</li>
+            <li><span class="material-icons-round">holiday_village </span>  Projects</li>
+        </ul>
+    </aside>
+    <main id="content">
+        <!-- <div class="page" id="projects-page" style="display: none;"> -->
+
+        <div class="page" id="projects-page" >
+            <dialog id="new-project-modal">
+                <form id="new-project-form">
+                    <h2>New Project</h2>
+                    <div class="input-list">
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">apartment </span>Name</label>
+                            <input name="name" type="text" placeholder="What's the name of your project?">
+                            <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a short name</p>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">subject </span>Description</label>
+                            <textarea name="description" cols="30" rows="5" placeholder="Give your project a nice description! So people is jealous about it"></textarea>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">person </span>Role</label>
+                            <select name="userRole">
+                                <option>Architect</option>
+                                <option>Engineer</option>
+                                <option>Developer</option>
+                            </select>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">not_listed_location </span>Status</label>
+                            <select name="status">
+                                <option>Pending</option>
+                                <option>Active</option>
+                                <option>Finished</option>
+                            </select>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">calendar_month </span>Finish Date</label>
+                            <input name="finishDate" type="date" ></input>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin: 10px 0px 10px auto; column-gap: 10px;">
+                        <button id="project-input-canel" type="button" style="background-color: transparent;">Cancel</button>
+                        <button type="submit" style="background-color: rgb(18, 145, 18);">Accept</button>
+                    </div>
+                </form>
+            </dialog>
+            <dialog id="error-message-modal">
+                <h2>Error Occured</h2>
+                <div class="form-error-message">
+                    <label>
+                        <span class="material-icons-round">error </span>
+                        <span id="error-message">Error Message here!</span>
+                    </label>
+                </div>
+                <div style="display: flex; justify-content: flex-end;">
+                    <button id="error-message-check-button">Check</button>
+                </div>
+            </dialog>
+            <header>
+                <h2>Projects</h2>
+                <div style="display: flex; align-items: center; column-gap: 15px;">
+                    <span id="import-projects-btn" class="material-icons-round action-icon">file_upload</span>
+                    <span id="export-projects-btn" class="material-icons-round action-icon">file_download</span>
+                    <button id="new-project-btn"><span class="material-icons-round">add</span>New project</button>
+                </div>
+            </header>
+            <div id="projects-list">
+                <!-- <div class="project-card">
+                    <div class="card-header">
+                        <p style="background-color: #ca8134; padding: 10px; border-radius: 8px; aspect-ratio: 1;">HC</p>
+                        <div>
+                            <h5>Project Name</h5>
+                            <p>Project Description Goes Here...</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-property">
+                            <p style="color: #969696;">Status</p>
+                            <p>Active</p>
+                        </div>
+                        <div class="card-property">
+                            <p style="color: #969696;">Role</p>
+                            <p>Engineer</p>
+                        </div>
+                        <div class="card-property">
+                            <p style="color: #969696;">Cost</p>
+                            <p>$2'000.000</p>
+                        </div>
+                        <div class="card-property">
+                            <p style="color: #969696;">Estimated Progress</p>
+                            <p>45%</p>
+                        </div>
+     
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+        
+        
+        <div class="page" id="project-details" style="display: none;">
+        <!-- <div class="page" id="project-details" style="display: flex;"> -->
+            <dialog id="edit-project-modal">
+                <form id="edit-project-form">
+                    <h2>Edit Project</h2>
+                    <div class="input-list">
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">apartment </span>Name</label>
+                            <input name="name" type="text" placeholder="What's the name of your project?">
+                            <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a short name</p>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">subject </span>Description</label>
+                            <textarea name="description" cols="30" rows="5" placeholder="Give your project a nice description! So people is jealous about it"></textarea>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">person </span>Role</label>
+                            <select name="userRole">
+                                <option>Architect</option>
+                                <option>Engineer</option>
+                                <option>Developer</option>
+                            </select>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">not_listed_location </span>Status</label>
+                            <select name="status">
+                                <option>Pending</option>
+                                <option>Active</option>
+                                <option>Finished</option>
+                            </select>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">calendar_month </span>Finish Date</label>
+                            <input name="finishDate" type="date" ></input>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin: 10px 0px 10px auto; column-gap: 10px;">
+                        <button id="edit-project-input-canel" type="button" style="background-color: transparent;">Cancel</button>
+                        <button type="submit" style="background-color: rgb(18, 145, 18);">Accept</button>
+                    </div>
+                </form>
+            </dialog>
+            <dialog id="edit-error-message-modal">
+                <h2>Error Occured</h2>
+                <div class="form-error-message">
+                    <label>
+                        <span class="material-icons-round">error </span>
+                        <span id="edit-error-message">Error Message here!</span>
+                    </label>
+                </div>
+                <div style="display: flex; justify-content: flex-end;">
+                    <button id="edit-error-message-check-button">Check</button>
+                </div>
+            </dialog>
+            <dialog id="new-todo-modal">
+                <form id="new-todo-form" method="dialog">                    
+                    <h2>New To-Do</h2>
+                    <div class="input-list">
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">construction </span>To-Do Message</label>
+                            <textarea name="todo-message" cols="30" rows="5" 
+                                placeholder="Make anything here as you want, even something longer."></textarea>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">done_outline</span>To-Do Status</label>
+                            <div style="display: flex; flex-direction:row; column-gap: 1em; align-items: start; justify-content: center;">
+                                <input type="checkbox" id="todo-status" name="todo-status" style="transform: scale(2);">
+                                <label for="todo-status">Done?</label>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end; margin: 10px 0px 10px auto; column-gap: 10px;">
+                            <button type="submit" style="background-color: rgb(18, 145, 18);">Enter/Esc</button>
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+
+            <dialog id="edit-todo-modal">
+                <form id="edit-todo-form" method="dialog">                    
+                    <h2>Edit To-Do</h2>
+                    <div class="input-list">
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">construction </span>To-Do Message</label>
+                            <textarea name="edit-todo-message" cols="30" rows="5" 
+                                placeholder="Make anything here as you want, even something longer."></textarea>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">done_outline</span>To-Do Status</label>
+                            <div style="display: flex; flex-direction:row; column-gap: 1em; align-items: start; justify-content: center;">
+                                <input type="checkbox" id="edit-todo-status" name="edit-todo-status" style="transform: scale(2);">
+                                <label for="edit-todo-status">Done?</label>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end; margin: 10px 0px 10px auto; column-gap: 10px;">
+                            <button type="submit" style="background-color: rgb(18, 145, 18);">Enter/Esc</button>
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+
+            <header>
+                <div>
+                    <h2 data-project-info="name">Hospital Center</h2>
+                    <p data-project-info="description" style="color: #969696;">Community hospital located at downtown</p>
+                </div>
+            </header>
+            
+            <div class="main-page-content">
+                <div style="display: flex; flex-direction: column; row-gap: 30px;">
+                    <div class="dashboard-card" style="padding: 30px 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0px 3px; margin-bottom: 30px;">
+                            <p data-project-info="icon_char" 
+                                    style="font-size: 20px; background-color: #ca8134; padding: 12px; 
+                                     border-radius: 100%; aspect-ratio: 1; text-transform: uppercase;
+                                     display: flex; flex-direction: column; justify-content: center;">
+                                HC</p>
+                            <button id="edit-project-btn" class="btn-secondary"><p style="width: 100%;">Edit</p></button>
+                        </div>
+                        <div style="padding: 0 0px;">
+                            <h5 data-project-info="name_s">Hospital Center</h5>
+                            <p data-project-info="description_s">Community hospital located at downtown</p>
+                        </div>
+                        <div style="display: flex; column-gap: 30px; padding: 30px 0px; justify-content: space-between;">
+                            <div >
+                                <p style="color: #969696;">Status</p>
+                                <p data-project-info="status">Active</p>
+                            </div>
+                            <div >
+                                <p style="color: #969696;">Role</p>
+                                <p data-project-info="userRole">Engineer</p>
+                            </div>
+                            <div >
+                                <p style="color: #969696;">Cost</p>
+                                <p data-project-info="cost">$2'000.000</p>
+                            </div>
+                            <div >
+                                <p style="color: #969696;">Finish Date</p>
+                                <p data-project-info="finishDate">2023-05-01</p>
+                            </div>
+                        </div>
+                        <div style="background-color: #404040; border-radius: 9999px; overflow: auto; ">
+                            <div data-project-info="progress" style="width: 80%; background-color: green; padding: 4px 0; text-align: center;">80%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card" style="flex-grow: 1;">
+                        <div style="padding: 20px 30px; display: flex; align-items: center; justify-content: space-between;">
+                            <h4>TO-Do</h4>
+                            <div style="display: flex; align-items: center; justify-content: end; column-gap: 20px;">
+                                <div style="display: flex; align-items: center; column-gap: 10px;">
+                                    <span class="material-icons-round">search</span>
+                                    <input id="todo-search" type="text" placeholder="Search To-Do's by name" style="width: 100%;">
+                                </div>
+                                <button id="new-todo-btn"> <span class="material-icons-round">add</span></button>
+                            </div>
+                        </div>
+                        <div id="todo-list" style="display: flex; flex-direction: column-reverse; padding: 10px 30px; row-gap: 20px;">
+                            <!-- <div class="todo-item" >
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; column-gap: 15px; align-items: center;">
+                                        <span class="material-icons-round" style="padding: 10px; background-color: #686868; border-radius: 10px;">construction</span>
+                                        <p>Make anything here as you want, even something longer.</p>
+                                    </div>
+                                    <p style="text-wrap: nowrap; margin-left: 10px;">Fri, 20 sep</p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="viewer-container" class="dashboard-card"></div>
+            </div>
+        </div>
+ 
+        <!-- <div class="page" id="users-page" > -->
+        <div class="page" id="users-page" style="display: none;">
+            <dialog id="new-user-modal">
+                <form>
+                    <h2>New User</h2>
+                    <div class="input-list">
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">person </span>Name</label>
+                            <input type="text" placeholder="What's your name?">
+                            <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a full name</p>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">people </span>User Name</label>
+                            <input type="text" placeholder="What's your username?">
+                            <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a full name</p>
+                        </div>
+
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">person </span>Role</label>
+                            <select>
+                                <option>Architect</option>
+                                <option>Engineer</option>
+                                <option>Developer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">not_listed_location </span>Job Status</label>
+                            <select>
+                                <option>Hiring</option>
+                                <option>Working</option>
+                                <option>Seeking</option>
+                            </select>
+                        </div>
+                        <div class="form-field-container">
+                            <label><span class="material-icons-round">calendar_month </span>Birthday</label>
+                            <input type="date" name="birthdaty"></input>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin: 10px 0px 10px auto; column-gap: 10px;">
+                        <button style="background-color: transparent;">Cancel</button>
+                        <button style="background-color: rgb(18, 145, 18);">Accept</button>
+                    </div>
+                </form>
+            </dialog>
+            <header>
+                <h2>Users</h2>
+                <div>
+                    <button><span class="material-icons-round">add</span>New user</button>
+                </div>
+            </header>
+            <table id="users-table">
+                <tr class="user-line">
+                    <th scope="col">
+                        <input type="checkbox" id="users" name="user" value="users">
+                        <!-- <label for="users">Name</label> -->
+                    </th>      
+                    <th scope="col">Name</th>      
+                    <th scope="col">User Name</th>      
+                    <th scope="col">Role</th>      
+                    <th scope="col">Status</th>      
+                </tr>
+                <tr class="user-line">
+                    <td>
+                        <input type="checkbox" id="user1" name="user" value="user1">
+                    </td> 
+                    <td>
+                        <span style="width: 40px; height: 40px; background-color: #ca8134; padding: 10px; border-radius: 8px; aspect-ratio: 1;">US</span>
+                        User 1 Name
+                    </td>
+                    <td>user 1 username</td>
+                    <td>Architect</td>
+                    <td>HiringHiringHiring</td>
+                </tr>
+                <tr class="user-line">
+                    <td>
+                        <input type="checkbox" id="user2" name="user" value="user2">
+                    </td> 
+                    <td>
+                        <span style="width: 40px; height: 40px; background-color: #ca8134; content: url(data:image/png;base64,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); padding: 0px; border-radius: 8px; aspect-ratio: 1; vertical-align: middle; "></span>
+                        User 2 Name
+                    </td>
+                    <td>user 2 username</td>
+                    <td>Architect</td>
+                    <td>Working</td>
+                </tr>
+                <tr class="user-line">
+                    <td>
+                        <input type="checkbox" id="user3" name="user" value="user3">
+                    </td> 
+                    <td>
+                        <span style="width: 15px; height: 15px; background-color: #ca8134; padding: 10px; border-radius: 8px; aspect-ratio: 1;">US3</span>
+                        User 3 Name
+                    </td>
+                    <td>user 3 username</td>
+                    <td>Architect</td>
+                    <td>Seeking</td>
+                </tr>
+                <tr class="user-line">
+                    <td>
+                        <input type="checkbox" id="user4" name="user" value="user4">
+                    </td> 
+                    <td>
+                        <span style="width: 15px; height: 15px; background-color: #ca8134; padding: 10px; border-radius: 8px; aspect-ratio: 1;">US4</span>
+                        User 4 Name
+                    </td>
+                    <td>user 4 username</td>
+                    <td>Architect</td>
+                    <td>Working</td>
+                </tr>
+
+            </table>
+
+        
+            </div>
+        </div>
+
+    </main>
 </body>
 </html>
